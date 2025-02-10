@@ -1,8 +1,8 @@
 # Compiler
 CC = gcc
 
-# Compiler flags
-CFLAGS = -Wall -Wextra -g
+# Compiler flags (add include directory!)
+CFLAGS = -Wall -Wextra -g -I$(INC_DIR)
 
 # Directories
 SRC_DIR = src
@@ -25,7 +25,7 @@ $(TARGET): $(OBJ)
 	$(CC) $(CFLAGS) -o $(TARGET) $(OBJ)
 
 # Compile each .c file into a .o object file
-$(SRC_DIR)/%.o: $(SRC_DIR)/%.c $(INC_DIR)/player.h $(INC_DIR)/career.h
+$(SRC_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # SAFE Clean up compiled files (DOES NOT delete .c files)

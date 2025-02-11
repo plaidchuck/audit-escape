@@ -13,9 +13,6 @@ TEST_DIR = tests
 SRC = $(wildcard $(SRC_DIR)/*.c)
 TEST_SRC = $(wildcard $(TEST_DIR)/*.c)
 
-# Test source files
-TEST_SRC = $(TEST_DIR)/test_career.c
-
 # Object files (convert .c to .o safely)
 OBJ = $(patsubst $(SRC_DIR)/%.c, $(SRC_DIR)/%.o, $(SRC))
 
